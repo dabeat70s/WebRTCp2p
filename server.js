@@ -5,14 +5,14 @@ var wss = new weSocketServ({
 });
 var users = {};
 wss.on('connection', function(conn){
-    console.log("User Connected");
+    console.log("User Connected lej");
     conn.on('message',function(message){
         var data;
 
         try {
             data = JSON.parse(message);
         } catch (e) {
-            console.log("Invalid JSON");
+            console.log("Invalid JSON lej");
             data = {};
         }
 
@@ -40,7 +40,7 @@ wss.on('connection', function(conn){
     conn.on('close', function (){
         console.log("Connextion closed");
     });
-    conn.send("Hello from Da LEJ!");
+    conn.send("Hello from Da LEJ");
 });
 
 function sendToOtherUser(connection, message) {
